@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Instagram, Youtube, Mail } from "lucide-react";
+import { Instagram, Youtube, Mail, Phone } from "lucide-react";
 
 const Contact = () => {
   const ref = useRef(null);
@@ -32,17 +32,30 @@ const Contact = () => {
             we will cultivate strength, balance, and serenity.
           </p>
 
-          {/* Contact Button */}
-          <motion.a
-            href="mailto:contact@dibelo.yoga"
+          {/* Contact Info */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, delay: 0.3 }}
-            className="btn-primary inline-flex items-center gap-3 mb-16"
+            className="flex flex-col items-center gap-6 mb-12"
           >
-            <Mail className="w-4 h-4" />
-            Contact Me
-          </motion.a>
+            <a
+              href="mailto:dibelodim@gmail.com"
+              className="inline-flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300 font-sans text-lg"
+            >
+              <Mail className="w-5 h-5" />
+              dibelodim@gmail.com
+            </a>
+            <a
+              href="https://wa.me/306936772036"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300 font-sans text-lg"
+            >
+              <Phone className="w-5 h-5" />
+              +30 6936772036
+            </a>
+          </motion.div>
 
           {/* Social Links */}
           <motion.div
