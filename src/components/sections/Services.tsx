@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import rehabilitationYoga from "@/assets/rehabilitation-yoga.png";
 import servicesYogaPose from "@/assets/services-yoga-pose.png";
-import sunsetYoga from "@/assets/sunset-yoga.jpg";
 import yogaWorkshop from "@/assets/yoga-workshop.jpg";
 
 const services = [
@@ -11,14 +11,14 @@ const services = [
     subtitle: "Healing & Recovery",
     description:
       "Guided therapeutic yoga techniques to address specific injuries, alleviate chronic pain, improve flexibility, and promote overall well-being through tailored sequences and modifications.",
-    image: servicesYogaPose,
+    image: rehabilitationYoga,
   },
   {
     title: "Athletic",
     subtitle: "Performance Enhancement",
     description:
       "Optimize athletic performance through yoga that increases mobility, builds core strength, enhances mental focus, and prevents injuries. Uncover your untapped potential.",
-    image: sunsetYoga,
+    image: servicesYogaPose,
   },
   {
     title: "Beginners",
