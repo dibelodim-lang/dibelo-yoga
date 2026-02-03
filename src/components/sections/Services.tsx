@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import streetYoga from "@/assets/street-urban-yoga.jpeg";
+import servicesYogaPose from "@/assets/services-yoga-pose.png";
 import sunsetYoga from "@/assets/sunset-yoga.jpg";
 import yogaWorkshop from "@/assets/yoga-workshop.jpg";
 
@@ -11,7 +11,7 @@ const services = [
     subtitle: "Healing & Recovery",
     description:
       "Guided therapeutic yoga techniques to address specific injuries, alleviate chronic pain, improve flexibility, and promote overall well-being through tailored sequences and modifications.",
-    image: streetYoga,
+    image: servicesYogaPose,
   },
   {
     title: "Athletic",
