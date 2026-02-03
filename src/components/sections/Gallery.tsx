@@ -1,18 +1,22 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import streetYoga from "@/assets/street-urban-yoga.jpeg";
-import sunsetYoga from "@/assets/sunset-yoga.jpg";
-import yogaAdjustments from "@/assets/yoga-adjustments.jpg";
-import yogaWorkshop from "@/assets/yoga-workshop.jpg";
-import tittibhasana from "@/assets/tittibhasana.jpg";
+import gallery1 from "@/assets/gallery-1.jpeg";
+import gallery2 from "@/assets/gallery-2.png";
+import gallery3 from "@/assets/gallery-3.png";
+import gallery4 from "@/assets/gallery-4.png";
+import gallery5 from "@/assets/gallery-5.png";
+import gallery6 from "@/assets/gallery-6.png";
+import gallery7 from "@/assets/gallery-7.png";
 
 const images = [
-  { src: streetYoga, alt: "Urban street yoga practice" },
-  { src: sunsetYoga, alt: "Sunset yoga session" },
-  { src: yogaAdjustments, alt: "Yoga adjustments and guidance" },
-  { src: yogaWorkshop, alt: "Yoga workshop session" },
-  { src: tittibhasana, alt: "Tittibhasana pose" },
+  { src: gallery1, alt: "Sunset handstand yoga pose" },
+  { src: gallery2, alt: "Crow pose on concrete" },
+  { src: gallery3, alt: "Stretching in dark studio" },
+  { src: gallery4, alt: "Seated side stretch in warehouse" },
+  { src: gallery5, alt: "Meditative seated pose" },
+  { src: gallery6, alt: "Standing balance pose" },
+  { src: gallery7, alt: "Flying crow arm balance" },
 ];
 
 const Gallery = () => {
@@ -45,7 +49,7 @@ const Gallery = () => {
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className={`relative overflow-hidden group ${
-                index === 0 || index === 4 ? "row-span-2" : ""
+                index === 0 || index === 3 || index === 6 ? "row-span-2" : ""
               }`}
             >
               <img
