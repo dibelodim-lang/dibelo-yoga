@@ -2,20 +2,23 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Instagram, Youtube, Mail, Phone } from "lucide-react";
-
 const Contact = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  return (
-    <section id="contact" className="section-padding bg-background" ref={ref}>
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "-100px"
+  });
+  return <section id="contact" className="section-padding bg-background" ref={ref}>
       <div className="container-narrow">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1 }}
-          className="text-center"
-        >
+        <motion.div initial={{
+        opacity: 0,
+        y: 30
+      }} animate={isInView ? {
+        opacity: 1,
+        y: 0
+      } : {}} transition={{
+        duration: 1
+      }} className="text-center">
           <span className="inline-block text-primary font-sans text-xs tracking-[0.3em] uppercase mb-6">
             Get in Touch
           </span>
@@ -33,80 +36,63 @@ const Contact = () => {
           </p>
 
           {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="flex flex-col items-center gap-6 mb-12"
-          >
-            <a
-              href="mailto:dibelodim@gmail.com"
-              className="inline-flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300 font-sans text-lg"
-            >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} animate={isInView ? {
+          opacity: 1,
+          y: 0
+        } : {}} transition={{
+          duration: 1,
+          delay: 0.3
+        }} className="flex flex-col items-center gap-6 mb-12">
+            <a href="mailto:dibelodim@gmail.com" className="inline-flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300 font-sans text-lg">
               <Mail className="w-5 h-5" />
               dibelodim@gmail.com
             </a>
-            <a
-              href="https://wa.me/306936772036"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300 font-sans text-lg"
-            >
+            <a href="https://wa.me/306936772036" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300 font-sans text-lg">
               <Phone className="w-5 h-5" />
               +30 6936772036
             </a>
           </motion.div>
 
           {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="flex items-center justify-center gap-8"
-          >
-            <a
-              href="https://www.youtube.com/channel/UCFhrr4fHY9bcLCxK3zA278A"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-300"
-              aria-label="YouTube"
-            >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} animate={isInView ? {
+          opacity: 1,
+          y: 0
+        } : {}} transition={{
+          duration: 1,
+          delay: 0.5
+        }} className="flex items-center justify-center gap-8">
+            <a href="https://www.youtube.com/channel/UCFhrr4fHY9bcLCxK3zA278A" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300" aria-label="YouTube">
               <Youtube className="w-6 h-6" />
             </a>
-            <a
-              href="https://www.instagram.com/dimitrisdibelo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-300"
-              aria-label="Instagram"
-            >
+            <a href="https://www.instagram.com/dimitrisdibelo" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300" aria-label="Instagram">
               <Instagram className="w-6 h-6" />
             </a>
           </motion.div>
 
           {/* Studio Link */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 1, delay: 0.7 }}
-            className="mt-16 pt-12 border-t border-border"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} animate={isInView ? {
+          opacity: 1,
+          y: 0
+        } : {}} transition={{
+          duration: 1,
+          delay: 0.7
+        }} className="mt-16 pt-12 border-t border-border">
             <p className="text-muted-foreground font-sans text-sm mb-4">
               Owner of
             </p>
-            <a
-              href="https://hathastudio.gr/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-serif text-xl text-foreground hover:text-primary transition-colors duration-300"
-            >
-              Yoga & Pilates Studio
-            </a>
+            <a href="https://hathastudio.gr/" target="_blank" rel="noopener noreferrer" className="font-serif text-xl text-foreground hover:text-primary transition-colors duration-300">Hatha Yoga & Pilates Studio</a>
           </motion.div>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
