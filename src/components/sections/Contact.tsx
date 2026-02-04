@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Instagram, Youtube, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -56,24 +56,6 @@ const Contact = () => {
             </a>
           </motion.div>
 
-          {/* Social Links */}
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} animate={isInView ? {
-          opacity: 1,
-          y: 0
-        } : {}} transition={{
-          duration: 1,
-          delay: 0.5
-        }} className="flex items-center justify-center gap-8">
-            <a href="https://www.youtube.com/channel/UCFhrr4fHY9bcLCxK3zA278A" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300" aria-label="YouTube">
-              <Youtube className="w-6 h-6" />
-            </a>
-            <a href="https://www.instagram.com/dimitrisdibelo" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300" aria-label="Instagram">
-              <Instagram className="w-6 h-6" />
-            </a>
-          </motion.div>
 
           {/* Studio Link */}
           <motion.div initial={{
