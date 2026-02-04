@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import philosophyLogo from "@/assets/philosophy-logo.png";
 
 const Philosophy = () => {
   const ref = useRef(null);
@@ -19,19 +20,24 @@ const Philosophy = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}
-          className="text-center"
+          className="text-center relative"
         >
-          <span className="inline-block text-primary font-sans text-xs tracking-[0.3em] uppercase mb-6">
+          {/* Logo behind title */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-64 md:w-80 lg:w-96 opacity-20 pointer-events-none">
+            <img src={philosophyLogo} alt="" className="w-full h-auto" />
+          </div>
+          
+          <span className="inline-block text-primary font-sans text-xs tracking-[0.3em] uppercase mb-6 relative z-10">
             Philosophy
           </span>
           
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-8 leading-tight">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-8 leading-tight relative z-10">
             Remember to
             <br />
             <span className="text-gradient-gold italic">Breathe</span>
           </h2>
 
-          <div className="line-accent w-24 mx-auto mb-12" />
+          <div className="line-accent w-24 mx-auto mb-12 relative z-10" />
         </motion.div>
 
         <motion.div
