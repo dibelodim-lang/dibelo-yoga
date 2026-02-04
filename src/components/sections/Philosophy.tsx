@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import philosophyLogo from "@/assets/philosophy-logo.png";
 
 const Philosophy = () => {
   const ref = useRef(null);
@@ -22,13 +21,8 @@ const Philosophy = () => {
           transition={{ duration: 1 }}
           className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12"
         >
-          {/* Logo on the left */}
-          <div className="w-[9.8rem] md:w-[12.2rem] lg:w-[14.6rem] flex-shrink-0 md:-ml-8 lg:-ml-12">
-            <img src={philosophyLogo} alt="" className="w-full h-auto" />
-          </div>
-          
-          {/* Title on the right */}
-          <div className="text-center md:text-left">
+          {/* Title */}
+          <div className="text-center">
             <span className="inline-block text-primary font-sans text-xs tracking-[0.3em] uppercase mb-6">
               Philosophy
             </span>
