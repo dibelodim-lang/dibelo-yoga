@@ -23,7 +23,7 @@ const Philosophy = () => {
           className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12"
         >
           {/* Logo on the left */}
-          <div className="w-32 md:w-40 lg:w-48 flex-shrink-0">
+          <div className="w-[8.2rem] md:w-[10.2rem] lg:w-[12.2rem] flex-shrink-0">
             <img src={philosophyLogo} alt="" className="w-full h-auto" />
           </div>
           
