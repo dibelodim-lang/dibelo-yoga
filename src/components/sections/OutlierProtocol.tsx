@@ -8,12 +8,12 @@ const OutlierProtocol = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const coreExpertise = [
-    "The Outlier Protocol: Elite-level physical and mental optimization.",
-    "Global Educator: Leading International Yoga Teacher Trainings & Workshops worldwide.",
-    "Studio Founder: Visionary leadership in Hatha Yoga & Pilates studio management.",
-    "International Certification: 500+ hours certified (Ashtanga & Hatha).",
-    "Therapeutic Bodywork: Traditional Ayurvedic & Deep Tissue expertise (Sri Lanka).",
-    "Nervous System Specialist: Meditation & Pranayama techniques from the Bihar School of India.",
+    { title: "The Outlier Protocol", desc: "Elite-level physical and mental optimization." },
+    { title: "Global Educator", desc: "Leading International Yoga Teacher Trainings & Workshops worldwide." },
+    { title: "Studio Founder", desc: "Visionary leadership in Hatha Yoga & Pilates studio management." },
+    { title: "International Certification", desc: "500+ hours certified (Ashtanga & Hatha)." },
+    { title: "Therapeutic Bodywork", desc: "Traditional Ayurvedic & Deep Tissue expertise (Sri Lanka)." },
+    { title: "Nervous System Specialist", desc: "Meditation & Pranayama techniques from the Bihar School of India." },
   ];
 
   return (
@@ -85,7 +85,7 @@ const OutlierProtocol = () => {
                 transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
                 className="p-4 border border-border bg-background/50 text-muted-foreground font-sans text-sm leading-relaxed"
               >
-                {item}
+                <span className="text-foreground font-medium">{item.title}:</span> {item.desc}
               </motion.div>
             ))}
           </div>
