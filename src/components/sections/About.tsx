@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import dimitrisImage from "@/assets/dimitris-dibelo.jpeg";
 
 const About = () => {
   const ref = useRef(null);
@@ -10,112 +10,85 @@ const About = () => {
   return (
     <section id="about" className="section-padding bg-background" ref={ref}>
       <div className="container-wide">
-        <div className="max-w-4xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          {/* Image */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="relative"
+          >
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <img
+                src={dimitrisImage}
+                alt="Dimitris Dibelo"
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+            </div>
+            {/* Decorative frame */}
+            <div className="absolute -bottom-6 -right-6 w-full h-full border border-primary/30 -z-10" />
+          </motion.div>
+
+          {/* Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-            className="text-center"
+            className="lg:pl-8"
           >
             <span className="inline-block text-primary font-sans text-xs tracking-[0.3em] uppercase mb-6">
-              The Outlier Protocol
+              About
             </span>
             
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-8 leading-tight">
-              Mastery Over
+              A Journey of
               <br />
-              <span className="text-gradient-gold">Comfort</span>
+              <span className="text-gradient-gold">Transformation</span>
             </h2>
 
-            <div className="line-accent w-16 mb-8 mx-auto" />
+            <div className="line-accent w-16 mb-8" />
 
-            <div className="space-y-6 text-muted-foreground font-sans text-base leading-relaxed text-left max-w-3xl mx-auto">
+            <div className="space-y-6 text-muted-foreground font-sans text-base leading-relaxed">
               <p>
-                The Outlier Protocol is a high-performance wellness architecture designed for the global elite—CEOs, VIPs, and individuals operating in high-pressure environments. Moving away from traditional passive recovery, the protocol focuses on active optimization, bridging the gap between ancient disciplines and modern bio-performance.
+                Dimitris Dibelo is a globally-renowned yoga teacher with over a decade of 
+                experience. His journey into yoga began at the age of 23 when he encountered 
+                serious issues with his lower back and knees. Motivated to find a solution, 
+                he immersed himself in the practice and eventually turned his passion into a career.
               </p>
               
               <p>
-                Its core philosophy, "Mastery Over Comfort," emphasizes that true peak performance is achieved through the technical recalibration of human mechanics and neural resilience.
+                Authorized by Yoga Alliance as an Experienced Registered Yoga Teacher (ERYT) 
+                at the 500-hour level, Dimitris offers trainings in Ashtanga Vinyasa Yoga and 
+                Hatha Yoga. His teaching style combines the wisdom of his teacher, Kristina 
+                Karitinos Ireland, with his own Italian temperament and sense of humor.
               </p>
 
               <p>
-                The protocol is structured into three distinct modules, each serving a specific strategic purpose:
+                Dynamic and playful, his classes emphasize the importance of breath, alignment, 
+                and respect for the human body, while integrating the ancient healing wisdom 
+                of Ayurveda.
               </p>
+            </div>
 
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="module-1" className="border-primary/20">
-                  <AccordionTrigger className="text-foreground font-serif text-lg hover:no-underline">
-                    Module I: Neural Recalibration
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground space-y-3">
-                    <p><strong className="text-foreground">The Goal:</strong> Nervous System Restoration.</p>
-                    <p><strong className="text-foreground">The Experience:</strong> This module acts as a technical intervention to release accumulated biological stress. Using targeted movement and advanced breathwork techniques, it transitions the organism from a "fight or flight" state to one of "optimal recovery."</p>
-                    <p><strong className="text-foreground">Strategic Application:</strong> It is specifically designed for the Arrival Phase of a stay, making it the ideal solution for neutralizing jet lag and the immediate stressors of high-stakes travel.</p>
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="module-2" className="border-primary/20">
-                  <AccordionTrigger className="text-foreground font-serif text-lg hover:no-underline">
-                    Module II: Structural Power
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground space-y-3">
-                    <p><strong className="text-foreground">The Goal:</strong> Functional Power and Physical Mastery.</p>
-                    <p><strong className="text-foreground">The Experience:</strong> This is the core of the High-Performer Protocol. It utilizes the principles of biomechanics combined with the discipline of Ashtanga and Hatha Yoga to build structural integrity. Rather than simple exercise, this module is a strategic alignment session.</p>
-                    <p><strong className="text-foreground">Strategic Application:</strong> The focus is on minimizing physical "friction"—the minor misalignments and inefficiencies that drain energy—thereby maximizing the body's total energy output and physical power.</p>
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="module-3" className="border-primary/20">
-                  <AccordionTrigger className="text-foreground font-serif text-lg hover:no-underline">
-                    Module III: The Ascent (Signature Experience)
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground space-y-3">
-                    <p><strong className="text-foreground">The Goal:</strong> Mental Clarity and Flow State.</p>
-                    <p><strong className="text-foreground">The Experience:</strong> Considered the pinnacle of the protocol, The Ascent is an immersive, high-aesthetic experience. It combines advanced breathwork with live sonic frequencies and a DJ set. The movement and breath are synchronized to guide the participant into a state of absolute euphoria and mental clarity.</p>
-                    <p><strong className="text-foreground">Strategic Application:</strong> It is offered as a Bespoke Private session or an Exclusive Group Event, serving as a transformative "peak experience" that unlocks the creative and cognitive flow state necessary for high-level leadership.</p>
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+            <div className="mt-10 flex items-center gap-8">
+              <div className="text-center">
+                <span className="block font-serif text-4xl text-primary">15+</span>
+                <span className="text-xs tracking-[0.2em] uppercase text-muted-foreground">Years</span>
+              </div>
+              <div className="w-px h-12 bg-border" />
+              <div className="text-center">
+                <span className="block font-serif text-4xl text-primary">E-RYT</span>
+                <span className="text-xs tracking-[0.2em] uppercase text-muted-foreground">500 Hour</span>
+              </div>
+              <div className="w-px h-12 bg-border" />
+              <div className="text-center">
+                <span className="block font-serif text-4xl text-primary">∞</span>
+                <span className="text-xs tracking-[0.2em] uppercase text-muted-foreground">Students</span>
+              </div>
             </div>
           </motion.div>
         </div>
-
-        {/* Collaboration & Delivery */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-          className="mt-20"
-        >
-          <span className="block text-center text-primary font-sans text-xs tracking-[0.3em] uppercase mb-8">
-            Collaboration & Delivery
-          </span>
-          
-          <p className="text-center text-muted-foreground font-sans text-base leading-relaxed max-w-3xl mx-auto mb-12">
-            The protocol is delivered through three specialized formats to ensure it fits the lifestyle of the modern outlier:
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8 border border-border bg-background/50 text-center">
-              <h4 className="font-serif text-xl text-foreground mb-4">Private Residency</h4>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                Personalized 1-on-1 guidance provided within private suites or villas.
-              </p>
-            </div>
-            <div className="p-8 border border-border bg-background/50 text-center">
-              <h4 className="font-serif text-xl text-foreground mb-4">The Outlier Journey</h4>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                A modular 3- or 5-day intensive covering the full spectrum of the method for sustainable results.
-              </p>
-            </div>
-            <div className="p-8 border border-border bg-background/50 text-center">
-              <h4 className="font-serif text-xl text-foreground mb-4">Signature Events</h4>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                Limited-edition workshops designed to be the highlight of a luxury resort's seasonal wellness calendar.
-              </p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
