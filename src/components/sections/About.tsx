@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import dimitrisImage from "@/assets/dimitris-dibelo.jpeg";
+
 
 const About = () => {
   const ref = useRef(null);
@@ -10,32 +10,13 @@ const About = () => {
   return (
     <section id="about" className="section-padding bg-background" ref={ref}>
       <div className="container-wide">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="relative"
-          >
-            <div className="relative aspect-[4/5] overflow-hidden">
-              <img
-                src={dimitrisImage}
-                alt="Dimitris Dibelo"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-            </div>
-            {/* Decorative frame */}
-            <div className="absolute -bottom-6 -right-6 w-full h-full border border-primary/30 -z-10" />
-          </motion.div>
-
+        <div className="max-w-3xl mx-auto">
           {/* Content */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-            className="lg:pl-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="text-center"
           >
             <span className="inline-block text-primary font-sans text-xs tracking-[0.3em] uppercase mb-6">
               About
