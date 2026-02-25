@@ -35,7 +35,7 @@ const OutlierProtocol = () => {
           <img 
             src={outlierLogo} 
             alt="Outlier Protocol" 
-            className="w-48 md:w-64 lg:w-72 h-auto"
+            className="w-[15.6rem] md:w-[20.8rem] lg:w-[23.4rem] h-auto"
           />
         </motion.div>
 
