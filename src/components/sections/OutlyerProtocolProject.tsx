@@ -1,15 +1,18 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import outlyerBg from "@/assets/outlyer-bg.png";
 
 const OutlyerProtocolProject = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="section-padding bg-charcoal relative overflow-hidden" ref={ref}>
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute bottom-1/4 right-1/3 w-64 h-64 border border-primary rounded-full" />
+    <section className="section-padding relative overflow-hidden" ref={ref}>
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img src={outlyerBg} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-background/80" />
       </div>
 
       <div className="container-narrow relative z-10">
