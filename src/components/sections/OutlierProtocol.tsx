@@ -8,13 +8,13 @@ const OutlierProtocol = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const coreExpertise = [
-    "The Outlier Protocol: Elite-level physical and mental optimization.",
-    "Global Educator: Leading International Yoga Teacher Trainings & Workshops worldwide.",
-    "Studio Founder: Visionary leadership in Hatha Yoga & Pilates studio management.",
-    "International Certification: 500+ hours certified (Ashtanga & Hatha).",
-    "Therapeutic Bodywork: Traditional Ayurvedic & Deep Tissue expertise (Sri Lanka).",
-    "Nervous System Specialist: Meditation & Pranayama techniques from the Bihar School of India.",
-  ];
+  "The Outlier Protocol: Elite-level physical and mental optimization.",
+  "Global Educator: Leading International Yoga Teacher Trainings & Workshops worldwide.",
+  "Studio Founder: Visionary leadership in Hatha Yoga & Pilates studio management.",
+  "International Certification: 500+ hours certified (Ashtanga & Hatha).",
+  "Therapeutic Bodywork: Traditional Ayurvedic & Deep Tissue expertise (Sri Lanka).",
+  "Nervous System Specialist: Meditation & Pranayama techniques from the Bihar School of India."];
+
 
   return (
     <section className="section-padding bg-charcoal relative overflow-hidden" ref={ref}>
@@ -30,13 +30,13 @@ const OutlierProtocol = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 1 }}
-          className="flex justify-center mb-12"
-        >
-          <img 
-            src={outlierLogo} 
-            alt="Outlier Protocol" 
-            className="w-[15.6rem] md:w-[20.8rem] lg:w-[23.4rem] h-auto"
-          />
+          className="mb-12 flex items-start justify-center">
+
+          <img
+            src={outlierLogo}
+            alt="Outlier Protocol"
+            className="w-[15.6rem] md:w-[20.8rem] lg:w-[23.4rem] h-auto" />
+
         </motion.div>
 
         {/* Main Content */}
@@ -44,8 +44,8 @@ const OutlierProtocol = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, delay: 0.2 }}
-          className="space-y-8 text-center"
-        >
+          className="space-y-8 text-center">
+
           <p className="font-serif text-xl md:text-2xl text-foreground/90 leading-relaxed italic">
             "I bridge the gap between ancient wisdom and high-performance living."
           </p>
@@ -70,24 +70,24 @@ const OutlierProtocol = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, delay: 0.4 }}
-          className="mt-16"
-        >
+          className="mt-16">
+
           <span className="block text-center text-primary font-sans text-xs tracking-[0.3em] uppercase mb-8">
             Core Expertise
           </span>
           
           <div className="grid md:grid-cols-2 gap-4">
-            {coreExpertise.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                className="p-4 border border-border bg-background/50 text-muted-foreground font-sans text-sm leading-relaxed"
-              >
+            {coreExpertise.map((item, index) =>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+              className="p-4 border border-border bg-background/50 text-muted-foreground font-sans text-sm leading-relaxed">
+
                 {item}
               </motion.div>
-            ))}
+            )}
           </div>
         </motion.div>
 
@@ -96,15 +96,15 @@ const OutlierProtocol = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, delay: 0.8 }}
-          className="mt-16 p-8 md:p-12 border border-primary/30 bg-background/30 text-center"
-        >
+          className="mt-16 p-8 md:p-12 border border-primary/30 bg-background/30 text-center">
+
           <p className="text-foreground font-serif text-lg md:text-xl leading-relaxed">
             Whether it's a luxury resort partnership, a private villa residency, or a yacht-based intensive, I deliver a transformative experience that transcends standard wellness practices.
           </p>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default OutlierProtocol;
