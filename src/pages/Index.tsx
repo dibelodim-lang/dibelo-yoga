@@ -6,6 +6,8 @@ import Services from "@/components/sections/Services";
 import OutlierProtocol from "@/components/sections/OutlierProtocol";
 import Philosophy from "@/components/sections/Philosophy";
 import Gallery from "@/components/sections/Gallery";
+import YogaWithoutBoundaries from "@/components/sections/YogaWithoutBoundaries";
+import OutlyerProtocolProject from "@/components/sections/OutlyerProtocolProject";
 import Contact from "@/components/sections/Contact";
 
 const Index = () => {
@@ -19,6 +21,8 @@ const Index = () => {
         <OutlierProtocol />
         <Philosophy />
         <Gallery />
+        <YogaWithoutBoundaries />
+        <OutlyerProtocolProject />
         <Contact />
       </main>
       <Footer />
