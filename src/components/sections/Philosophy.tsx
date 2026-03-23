@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import philosophyLogo from "@/assets/philosophy-logo.png";
+
 
 const Philosophy = () => {
   const ref = useRef(null);
