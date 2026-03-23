@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Home, Anchor, Globe } from "lucide-react";
+import { Home, Anchor, Globe, Monitor } from "lucide-react";
 
 const YogaWithoutBoundaries = () => {
   const ref = useRef(null);
@@ -22,6 +22,11 @@ const YogaWithoutBoundaries = () => {
       icon: Globe,
       title: "Global Travel Companion",
       description: "Book your private instructor for the duration of your holidays, anywhere in the world.",
+    },
+    {
+      icon: Monitor,
+      title: "Private 1-on-1 Online Coaching",
+      description: "High-performance guidance and bespoke programming, delivered directly to you, anywhere in the world.",
     },
   ];
 
