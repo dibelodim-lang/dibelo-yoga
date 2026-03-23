@@ -53,7 +53,7 @@ const OutlyerProtocolProject = () => {
             "Ready to book your private experience?"
           </p>
           <a href="#contact" className="btn-elegant">
-            Inquire for Travel & Villa Sessions
+            Inquire for Travel & Private Sessions
           </a>
         </motion.div>
       </div>
