@@ -15,6 +15,11 @@ const Philosophy = () => {
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 border border-primary rounded-full" />
       </div>
 
+      {/* Decorative Logo - Left Side Behind Text */}
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/4 opacity-15 pointer-events-none">
+        <img src={philosophyLogo} alt="" className="w-[500px] h-[500px] object-contain" />
+      </div>
+
       <div className="container-narrow relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
