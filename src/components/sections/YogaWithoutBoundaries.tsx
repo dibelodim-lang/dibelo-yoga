@@ -58,18 +58,14 @@ const YogaWithoutBoundaries = () => {
             <p>
               Yoga is not confined by four walls. Whether you are on a summer getaway, relaxing at a secluded villa, or sailing the open seas on your yacht, your practice follows you.
             </p>
-            <p> I offer bespoke Vinyasa Yoga sessions tailored to your unique environment and schedule, anywhere in the world. Whether you are seeking the serenity of a deck in the middle of the Aegean or the privacy of your vacation residence, I bring energy, balance, and mindfulness directly to you. Masterclasses & Retreats: Available for private bookings, studio collaborations, and elite wellness integration. 
- Inquire today for private sessions, digital residencies, or strategic collaborations.
-
-
-
-
-
-
-
-
-
-
+            <p>
+              I offer bespoke Vinyasa Yoga sessions tailored to your unique environment and schedule, anywhere in the world. Whether you are seeking the serenity of a deck in the middle of the Aegean or the privacy of your vacation residence, I bring energy, balance, and mindfulness directly to you.
+            </p>
+            <p>
+              Masterclasses & Retreats: Available for private bookings, studio collaborations, and elite wellness integration.
+            </p>
+            <p>
+              Inquire today for private sessions, digital residencies, or strategic collaborations.
             </p>
           </div>
         </motion.div>
