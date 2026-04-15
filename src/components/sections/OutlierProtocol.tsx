@@ -52,7 +52,7 @@ const OutlierProtocol = () => {
 
           <div className="space-y-6 text-muted-foreground font-sans text-base leading-relaxed max-w-3xl mx-auto">
             <p>
-              With a global footprint spanning from the Bihar School of Yoga in India to elite environments in London, Scotland, and the USA, I have dedicated my career to mastering the mechanics of the human body and mind. As the Founder of my own Hatha Yoga & Pilates studio, I have spent years cultivating a space for physical transformation and structural integrity.
+              With a global footprint spanning from the Bihar School of Yoga in India to elite environments in London, Scotland, and the USA, I have dedicated my career to mastering the mechanics of the human body and mind. As the Founder of my own <a href="https://hathastudio.gr/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline underline-offset-4 transition-colors">Hatha Yoga & Pilates studio</a>, I have spent years cultivating a space for physical transformation and structural integrity.
             </p>
 
             <p>
