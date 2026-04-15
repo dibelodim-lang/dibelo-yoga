@@ -34,10 +34,10 @@ const OutlyerProtocolProject = () => {
 
           <div className="space-y-6 text-muted-foreground font-sans text-base leading-relaxed max-w-3xl mx-auto">
             <p>
-              Alongside my private sessions, I am the founder of the Outlyer Protocol. This project is a holistic approach to movement and consciousness, designed for those who seek to transcend the conventional.
+              Alongside my private sessions, I am the founder of the Outlier Protocol. This project is a holistic approach to movement and consciousness, designed for those who seek to transcend the conventional.
             </p>
             <p>
-              The Outlyer Protocol merges the dynamics of Yoga with an 'outlyer' mindset—breaking boundaries and exploring the full spectrum of human capability. Whether we meet on a mountain top or a coastal retreat, this is about more than just exercise; it's about a radical shift in perspective.
+              The Outlyer Protocol merges the dynamics of Yoga with an 'outlier' mindset breaking boundaries and exploring the full spectrum of human capability. Whether we meet on a mountain top or a coastal retreat, this is about more than just exercise; it's about a radical shift in perspective.
             </p>
           </div>
         </motion.div>
