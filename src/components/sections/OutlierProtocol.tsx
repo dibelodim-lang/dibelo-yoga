@@ -30,12 +30,12 @@ const OutlierProtocol = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 1 }}
-          className="mb-12 flex items-start justify-center">
+          className="-mt-4 mb-16 flex items-start justify-center">
 
           <img
             src={outlierLogo}
             alt="Outlier Protocol"
-            className="w-[15.6rem] md:w-[20.8rem] lg:w-[23.4rem] h-auto" />
+            className="w-[20rem] md:w-[26rem] lg:w-[30rem] h-auto" />
 
         </motion.div>
 
