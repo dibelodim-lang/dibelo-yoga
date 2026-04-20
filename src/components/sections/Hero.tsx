@@ -30,18 +30,10 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="font-serif text-6xl md:text-7xl lg:text-8xl font-light text-foreground mb-4"
+          className="font-serif text-6xl md:text-7xl lg:text-8xl font-light mb-8"
         >
-          Dimitris
-        </motion.h1>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="font-serif text-6xl md:text-7xl lg:text-8xl font-light text-gradient-gold mb-8"
-        >
-          Dibelo
+          <span className="block text-foreground mb-4">Dimitris</span>
+          <span className="block text-gradient-gold">Dibelo</span>
         </motion.h1>
 
         <motion.div
