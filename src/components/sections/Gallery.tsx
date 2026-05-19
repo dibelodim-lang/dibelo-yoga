@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Autoplay from "embla-carousel-autoplay";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import gallery1 from "@/assets/gallery-1.jpeg";
 import gallery2 from "@/assets/gallery-2.png";
 import gallery3 from "@/assets/gallery-3.png";
@@ -22,6 +30,9 @@ const images = [
 const Gallery = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const autoplay = useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true })
+  );
 
   return (
     <section className="section-padding bg-charcoal" ref={ref}>
@@ -40,27 +51,36 @@ const Gallery = () => {
           </h2>
         </motion.div>
 
-        {/* Masonry-style Gallery */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {images.map((image, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              className={`relative overflow-hidden group ${
-                index === 0 || index === 3 || index === 6 ? "row-span-2" : ""
-              }`}
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-background/30 group-hover:bg-transparent transition-all duration-500" />
-            </motion.div>
-          ))}
-        </div>
+        {/* Elegant Autoplay Slideshow */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="relative max-w-5xl mx-auto"
+        >
+          <Carousel
+            opts={{ loop: true, align: "center" }}
+            plugins={[autoplay.current]}
+            className="w-full"
+          >
+            <CarouselContent>
+              {images.map((image, index) => (
+                <CarouselItem key={index}>
+                  <div className="relative aspect-[16/10] overflow-hidden group">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-out scale-100 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none" />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex -left-12 bg-transparent border-primary/40 text-primary hover:bg-primary hover:text-background" />
+            <CarouselNext className="hidden md:flex -right-12 bg-transparent border-primary/40 text-primary hover:bg-primary hover:text-background" />
+          </Carousel>
+        </motion.div>
       </div>
     </section>
   );
