@@ -15,6 +15,12 @@ import gallery4 from "@/assets/gallery-4.png";
 import gallery5 from "@/assets/gallery-5.png";
 import gallery6 from "@/assets/gallery-6.png";
 import gallery7 from "@/assets/gallery-7.png";
+import gallery8 from "@/assets/gallery-8.jpg";
+import gallery9 from "@/assets/gallery-9.jpg";
+import gallery10 from "@/assets/gallery-10.jpg";
+import gallery11 from "@/assets/gallery-11.jpg";
+import gallery12 from "@/assets/gallery-12.jpg";
+import gallery13 from "@/assets/gallery-13.jpg";
 
 const images = [
   { src: gallery2, alt: "Crow pose on concrete" },
@@ -23,6 +29,12 @@ const images = [
   { src: gallery5, alt: "Meditative seated pose" },
   { src: gallery6, alt: "Standing balance pose" },
   { src: gallery7, alt: "Flying crow arm balance" },
+  { src: gallery8, alt: "Seated meditation in studio" },
+  { src: gallery9, alt: "Upward facing dog in group class" },
+  { src: gallery10, alt: "Hands-on adjustment in extended pose" },
+  { src: gallery11, alt: "Guided stretch in group session" },
+  { src: gallery12, alt: "Assisted extended side angle pose" },
+  { src: gallery13, alt: "Hands-on adjustment in forward fold" },
 ];
 
 const Gallery = () => {
