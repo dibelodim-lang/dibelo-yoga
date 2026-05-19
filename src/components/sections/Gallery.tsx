@@ -9,7 +9,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import gallery1 from "@/assets/gallery-1.jpeg";
 import gallery2 from "@/assets/gallery-2.png";
 import gallery3 from "@/assets/gallery-3.png";
 import gallery4 from "@/assets/gallery-4.png";
@@ -18,7 +17,6 @@ import gallery6 from "@/assets/gallery-6.png";
 import gallery7 from "@/assets/gallery-7.png";
 
 const images = [
-  { src: gallery1, alt: "Sunset handstand yoga pose" },
   { src: gallery2, alt: "Crow pose on concrete" },
   { src: gallery3, alt: "Stretching in dark studio" },
   { src: gallery4, alt: "Seated side stretch in warehouse" },
