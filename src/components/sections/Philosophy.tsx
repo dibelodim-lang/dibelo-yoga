@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import costaVayaImg from "@/assets/costa-vaya-dj.jpg";
+import philosophyOrnament from "@/assets/philosophy-ornament.png";
 
 
 const Philosophy = () => {
@@ -22,22 +23,42 @@ const Philosophy = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}
-          className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12"
+          className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16 mb-12"
         >
-          {/* Title */}
-          <div className="text-center">
+          {/* Title — left */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="text-center md:text-left"
+          >
             <span className="inline-block text-primary font-sans text-xs tracking-[0.3em] uppercase mb-6">
               Philosophy
             </span>
-            
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-8 leading-tight">
+
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight">
               Remember to
               <br />
               <span className="text-gradient-gold italic">Breathe</span>
             </h2>
 
-            <div className="line-accent w-24 mx-auto md:mx-0 mb-12" />
-          </div>
+            <div className="line-accent w-24 mx-auto md:mx-0 mt-6" />
+          </motion.div>
+
+          {/* Ornament logo — right */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, rotate: -8 }}
+            animate={isInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
+            transition={{ duration: 1.6, delay: 0.3, ease: "easeOut" }}
+            className="flex-shrink-0"
+          >
+            <img
+              src={philosophyOrnament}
+              alt="Dibelo Yoga emblem"
+              loading="lazy"
+              className="w-32 md:w-44 lg:w-52 h-auto opacity-90 drop-shadow-[0_0_25px_hsl(var(--gold)/0.25)]"
+            />
+          </motion.div>
         </motion.div>
 
         <motion.div
