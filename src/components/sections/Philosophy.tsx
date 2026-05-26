@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import costaVayaImg from "@/assets/costa-vaya-dj.jpg";
+import breatheAscent from "@/assets/breathe-ascent.png";
 
 
 const Philosophy = () => {
@@ -22,22 +23,37 @@ const Philosophy = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}
-          className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12"
+          className="flex flex-col items-center justify-center"
         >
-          {/* Title */}
-          <div className="text-center">
-            <span className="inline-block text-primary font-sans text-xs tracking-[0.3em] uppercase mb-6">
-              Philosophy
-            </span>
-            
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-8 leading-tight">
+          <span className="inline-block text-primary font-sans text-xs tracking-[0.3em] uppercase mb-8">
+            Philosophy
+          </span>
+
+          {/* Title with elegant ascent mark */}
+          <div className="relative flex items-center justify-center gap-5 md:gap-8 mb-8">
+            <motion.div
+              initial={{ opacity: 0, rotate: -25, scale: 0.7 }}
+              animate={isInView ? { opacity: 1, rotate: 0, scale: 1 } : {}}
+              transition={{ duration: 1.6, delay: 0.4, ease: "easeOut" }}
+              className="relative shrink-0"
+            >
+              <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full" />
+              <img
+                src={breatheAscent}
+                alt=""
+                aria-hidden="true"
+                className="relative w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 object-contain animate-[spin_60s_linear_infinite]"
+              />
+            </motion.div>
+
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight text-left">
               Remember to
               <br />
               <span className="text-gradient-gold italic">Breathe</span>
             </h2>
-
-            <div className="line-accent w-24 mx-auto md:mx-0 mb-12" />
           </div>
+
+          <div className="line-accent w-24 mx-auto mb-12" />
         </motion.div>
 
         <motion.div
