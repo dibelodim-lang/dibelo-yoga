@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import costaVayaImg from "@/assets/costa-vaya-dj.jpg";
-import philosophyEmblem from "@/assets/philosophy-emblem.png";
 
 
 const Philosophy = () => {
@@ -30,27 +29,14 @@ const Philosophy = () => {
             <span className="inline-block text-primary font-sans text-xs tracking-[0.3em] uppercase mb-6">
               Philosophy
             </span>
+            
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-8 leading-tight">
+              Remember to
+              <br />
+              <span className="text-gradient-gold italic">Breathe</span>
+            </h2>
 
-            {/* Emblem framing the title */}
-            <div className="relative inline-flex items-center justify-center mb-2">
-              <motion.img
-                src={philosophyEmblem}
-                alt=""
-                aria-hidden="true"
-                initial={{ opacity: 0, scale: 0.85, rotate: -8 }}
-                animate={isInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
-                transition={{ duration: 1.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[22rem] md:w-[30rem] lg:w-[34rem] max-w-none pointer-events-none select-none opacity-90 drop-shadow-[0_0_40px_rgba(201,168,76,0.25)]"
-                style={{ animation: "philosophy-emblem-float 9s ease-in-out infinite" }}
-              />
-              <h2 className="relative font-serif text-4xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight px-12 py-10">
-                Remember to
-                <br />
-                <span className="text-gradient-gold italic">Breathe</span>
-              </h2>
-            </div>
-
-            <div className="line-accent w-24 mx-auto mb-12 mt-4" />
+            <div className="line-accent w-24 mx-auto md:mx-0 mb-12" />
           </div>
         </motion.div>
 
