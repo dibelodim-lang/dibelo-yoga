@@ -14,7 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      mentorship_assessments: {
+        Row: {
+          background: string
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          preferred_date: string | null
+          primary_focus: string[]
+          request_id: string
+          timezone: string
+        }
+        Insert: {
+          background: string
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          preferred_date?: string | null
+          primary_focus: string[]
+          request_id: string
+          timezone: string
+        }
+        Update: {
+          background?: string
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          preferred_date?: string | null
+          primary_focus?: string[]
+          request_id?: string
+          timezone?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
