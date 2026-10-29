@@ -9,6 +9,7 @@ import Gallery from "@/components/sections/Gallery";
 import YogaWithoutBoundaries from "@/components/sections/YogaWithoutBoundaries";
 import OutlyerProtocolProject from "@/components/sections/OutlyerProtocolProject";
 import Contact from "@/components/sections/Contact";
+import Mentorship from "@/components/sections/Mentorship";
 
 const Index = () => {
   return (
@@ -23,6 +24,7 @@ const Index = () => {
         <Gallery />
         <YogaWithoutBoundaries />
         <OutlyerProtocolProject />
+        <Mentorship />
         <Contact />
       </main>
       <Footer />
