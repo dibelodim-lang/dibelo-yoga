@@ -1,0 +1,1 @@
+ALTER TABLE public.mentorship_assessments ADD COLUMN notification_status text NOT NULL DEFAULT 'pending' CHECK (notification_status IN ('pending','sent','failed')), ADD COLUMN notification_email_id text, ADD COLUMN notification_sent_at timestamptz, ADD COLUMN notification_error_status integer;

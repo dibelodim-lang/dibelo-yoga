@@ -21,6 +21,10 @@ export type Database = {
           email: string
           full_name: string
           id: string
+          notification_email_id: string | null
+          notification_error_status: number | null
+          notification_sent_at: string | null
+          notification_status: string
           preferred_date: string | null
           primary_focus: string[]
           request_id: string
@@ -32,6 +36,10 @@ export type Database = {
           email: string
           full_name: string
           id?: string
+          notification_email_id?: string | null
+          notification_error_status?: number | null
+          notification_sent_at?: string | null
+          notification_status?: string
           preferred_date?: string | null
           primary_focus: string[]
           request_id: string
@@ -43,6 +51,10 @@ export type Database = {
           email?: string
           full_name?: string
           id?: string
+          notification_email_id?: string | null
+          notification_error_status?: number | null
+          notification_sent_at?: string | null
+          notification_status?: string
           preferred_date?: string | null
           primary_focus?: string[]
           request_id?: string

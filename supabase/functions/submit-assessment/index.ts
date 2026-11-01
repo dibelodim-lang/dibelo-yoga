@@ -1,6 +1,7 @@
 import { createClient } from "npm:@supabase/supabase-js@2";
 import { corsHeaders } from "npm:@supabase/supabase-js@2/cors";
 import { z } from "npm:zod@3";
+import { buildNotification } from "./notification.ts";
 
 const schema = z.object({
   full_name: z.string().trim().min(1).max(100),
@@ -33,6 +34,38 @@ Deno.serve(async req => {
     const { website: _website, ...intake } = parsed.data;
     const { error } = await db.from("mentorship_assessments").insert(intake);
     if (error && error.code !== "23505") return response({ error: "Unable to save your intake. Please try again." }, 500);
-    return response({ success: true });
+    // Read back the saved row: retries must email the original answers, not a modified payload.
+    const { data: saved, error: readError } = await db.from("mentorship_assessments").select("*").eq("request_id", intake.request_id).single();
+    if (readError || !saved) return response({ error: "Unable to read your saved intake. Please try again." }, 500);
+    if (saved.notification_status === "sent") return response({ success: true, notification_sent: true });
+    const gatewayKey = Deno.env.get("LOVABLE_API_KEY");
+    const resendKey = Deno.env.get("RESEND_API_KEY");
+    if (!gatewayKey || !resendKey) {
+      await db.from("mentorship_assessments").update({ notification_status: "failed", notification_error_status: 503 }).eq("id", saved.id);
+      return response({ success: true, notification_sent: false });
+    }
+    try {
+      const emailResponse = await fetch("https://connector-gateway.lovable.dev/resend/emails", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Authorization": `Bearer ${gatewayKey}`, "X-Connection-Api-Key": resendKey, "Idempotency-Key": `diagnostic-assessment-${saved.id}` },
+        body: JSON.stringify({ from: Deno.env.get("RESEND_FROM_EMAIL") ?? "Dimitris Dibelo <onboarding@resend.dev>", ...buildNotification(saved) }),
+      });
+      if (!emailResponse.ok) {
+        // Do not log provider bodies: they may contain client data or credential fragments.
+        const providerBody = await emailResponse.text();
+        const providerResult = z.object({ name: z.string().max(100).optional() }).safeParse(JSON.parse(providerBody));
+        const providerError = providerResult.success ? providerResult.data.name : undefined;
+        console.error("Assessment email rejected", { status: emailResponse.status });
+        await db.from("mentorship_assessments").update({ notification_status: "failed", notification_error_status: emailResponse.status }).eq("id", saved.id);
+        return response({ success: true, notification_sent: false, notification_error: { status: emailResponse.status, name: providerError } });
+      }
+      const sent = z.object({ id: z.string().min(1) }).safeParse(await emailResponse.json());
+      if (!sent.success) throw new Error("Invalid email response");
+      await db.from("mentorship_assessments").update({ notification_status: "sent", notification_email_id: sent.data.id, notification_sent_at: new Date().toISOString(), notification_error_status: null }).eq("id", saved.id);
+      return response({ success: true, notification_sent: true });
+    } catch {
+      await db.from("mentorship_assessments").update({ notification_status: "failed", notification_error_status: 502 }).eq("id", saved.id);
+      return response({ success: true, notification_sent: false });
+    }
   } catch { return response({ error: "Unable to save your intake. Please try again." }, 500); }
 });
