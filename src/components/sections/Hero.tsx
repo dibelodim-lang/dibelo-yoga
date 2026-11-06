@@ -15,7 +15,7 @@ const Hero = () => {
           <h1 className="font-serif text-6xl sm:text-7xl lg:text-8xl font-light leading-none mb-7">Dimitris <span className="block italic">Dibelo</span></h1>
           <p className="font-serif text-2xl sm:text-3xl mb-5">Room to move. Space to breathe.</p>
           <p className="text-foreground/80 text-sm sm:text-base leading-relaxed max-w-md">A personal approach to yoga, movement and mindful living. Practice with intention, wherever you are.</p>
-          <div className="flex flex-wrap gap-3 mt-9"><Button asChild className="rounded-none h-12 px-6"><a href="#services">Explore Classes<ArrowUpRight /></a></Button><Button asChild variant="outline" className="rounded-none h-12 px-6 bg-transparent border-foreground/50 text-foreground hover:bg-foreground hover:text-background"><a href="#contact">Begin Your Journey</a></Button></div>
+          <div className="flex flex-wrap gap-3 mt-9"><Button asChild className="rounded-none h-12 px-6"><a href="#services">Explore Classes<ArrowUpRight /></a></Button><Button asChild variant="outline" className="rounded-none h-12 px-6 bg-transparent border-foreground/50 text-foreground hover:bg-foreground hover:text-background"><a href="#mentorship">Begin Your Journey</a></Button></div>
         </motion.div>
       </div>
       <a href="#about" aria-label="Discover the studio" className="absolute right-6 bottom-8 border border-foreground/40 rounded-full p-3 text-foreground"><ArrowDown size={20} /></a>
