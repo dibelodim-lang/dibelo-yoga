@@ -1,4 +1,6 @@
 # Mentorship assessment
+- [ ] Refresh studio navigation, hero, and class categories while preserving existing actions.
+- [ ] Place all ten new photographs and verify desktop/mobile presentation.
 - [x] Add black-and-gold mentorship section and intake modal.
 - [x] Securely store and verify assessment applications.
 - [x] Test validation, mobile layout, and complete submission flow.
