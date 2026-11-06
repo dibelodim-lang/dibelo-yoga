@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import outlyerBg from "@/assets/outlyer-bg.png";
 import { studioPhotos } from "@/lib/studio-photos";
 
 const OutlyerProtocolProject = () => {
