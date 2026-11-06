@@ -20,7 +20,7 @@ export default {
     extend: {
       fontFamily: {
         serif: ["Cormorant Garamond", "serif"],
-        sans: ["Inter", "sans-serif"],
+        sans: ["Manrope", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
