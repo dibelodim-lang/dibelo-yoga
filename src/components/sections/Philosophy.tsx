@@ -10,7 +10,7 @@ const Philosophy = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="section-padding bg-background relative overflow-hidden" ref={ref}>
+    <section id="philosophy" className="section-padding bg-background relative overflow-hidden" ref={ref}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 border border-primary rounded-full" />
