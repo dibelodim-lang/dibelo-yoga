@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { studioPhotos } from "@/lib/studio-photos";
 import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
@@ -23,6 +24,7 @@ import gallery12 from "@/assets/gallery-12.jpg";
 import gallery13 from "@/assets/gallery-13.jpg";
 
 const images = [
+  ...studioPhotos,
   { src: gallery2, alt: "Crow pose on concrete" },
   { src: gallery3, alt: "Stretching in dark studio" },
   { src: gallery4, alt: "Seated side stretch in warehouse" },
@@ -45,7 +47,7 @@ const Gallery = () => {
   );
 
   return (
-    <section className="section-padding bg-charcoal" ref={ref}>
+    <section id="gallery" className="section-padding bg-background" ref={ref}>
       <div className="container-wide">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -80,15 +82,15 @@ const Gallery = () => {
                     <img
                       src={image.src}
                       alt={image.alt}
-                      className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-out scale-100 group-hover:scale-105"
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-1000 ease-out scale-100 group-hover:scale-105 motion-reduce:transform-none"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none" />
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-12 bg-transparent border-primary/40 text-primary hover:bg-primary hover:text-background" />
-            <CarouselNext className="hidden md:flex -right-12 bg-transparent border-primary/40 text-primary hover:bg-primary hover:text-background" />
+            <CarouselPrevious className="left-3 md:-left-12 bg-background/90 border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground" />
+            <CarouselNext className="right-3 md:-right-12 bg-background/90 border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground" />
           </Carousel>
         </motion.div>
       </div>

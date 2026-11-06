@@ -31,7 +31,7 @@ const YogaWithoutBoundaries = () => {
 
 
   return (
-    <section className="section-padding bg-background relative overflow-hidden" ref={ref}>
+    <section id="experiences" className="section-padding bg-background relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/4 left-1/3 w-72 h-72 border border-primary rounded-full" />
       </div>

@@ -1,84 +1,26 @@
-import { motion } from "framer-motion";
-import heroImage from "@/assets/hero-meditation.jpg";
+import { motion, useReducedMotion } from "framer-motion";
+import { ArrowUpRight, ArrowDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { studioPhotos } from "@/lib/studio-photos";
 
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Yoga meditation"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/40 to-background" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 container-narrow text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-        >
-          <span className="inline-block text-primary font-sans text-xs tracking-[0.3em] uppercase mb-6">
-            Welcome to
-          </span>
+  const reduced = useReducedMotion();
+  return <>
+    <section className="studio-inverse relative min-h-[620px] h-[86svh] max-h-[900px] flex items-center overflow-hidden">
+      <img src={studioPhotos[1].src} alt={studioPhotos[1].alt} fetchPriority="high" className="absolute inset-0 w-full h-full object-cover object-[65%_center]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/55 to-background/10" />
+      <div className="container-wide relative w-full pt-20 pb-16">
+        <motion.div initial={reduced ? false : { opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-xl">
+          <p className="text-primary uppercase text-xs mb-7">Private practice · Global connection</p>
+          <h1 className="font-serif text-6xl sm:text-7xl lg:text-8xl font-light leading-none mb-7">Dimitris <span className="block italic">Dibelo</span></h1>
+          <p className="font-serif text-2xl sm:text-3xl mb-5">Room to move. Space to breathe.</p>
+          <p className="text-foreground/80 text-sm sm:text-base leading-relaxed max-w-md">A personal approach to yoga, movement and mindful living. Practice with intention, wherever you are.</p>
+          <div className="flex flex-wrap gap-3 mt-9"><Button asChild className="rounded-none h-12 px-6"><a href="#services">Explore Classes<ArrowUpRight /></a></Button><Button asChild variant="outline" className="rounded-none h-12 px-6 bg-transparent border-foreground/50 text-foreground hover:bg-foreground hover:text-background"><a href="#contact">Begin Your Journey</a></Button></div>
         </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="font-serif text-6xl md:text-7xl lg:text-8xl font-light mb-8"
-        >
-          <span className="block text-foreground mb-4">Dimitris</span>
-          <span className="block text-gradient-gold">Dibelo</span>
-        </motion.h1>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          className="line-accent w-24 mx-auto mb-8"
-        />
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="font-sans text-sm md:text-base tracking-[0.2em] uppercase text-muted-foreground mb-12"
-        >
-          The Transformative World of Yoga
-        </motion.p>
-
-        <motion.a
-          href="#contact"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="btn-elegant"
-        >
-          Begin Your Journey
-        </motion.a>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2"
-      >
-        <div className="flex flex-col items-center gap-3">
-          <span className="text-xs tracking-[0.2em] uppercase text-muted-foreground">
-            Scroll
-          </span>
-          <div className="w-px h-12 bg-gradient-to-b from-primary to-transparent" />
-        </div>
-      </motion.div>
+      <a href="#about" aria-label="Discover the studio" className="absolute right-6 bottom-8 border border-foreground/40 rounded-full p-3 text-foreground"><ArrowDown size={20} /></a>
     </section>
-  );
+    <div className="bg-secondary border-b border-border"><div className="container-wide flex flex-wrap items-center justify-center sm:justify-between gap-4 py-6 text-[10px] sm:text-xs uppercase text-muted-foreground"><span>Hatha · Vinyasa · Ashtanga</span><span>In-person & online</span><span>Breath. Balance. Connection.</span></div></div>
+  </>;
 };
-
 export default Hero;

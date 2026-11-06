@@ -28,7 +28,7 @@ const About = () => {
               <span className="text-gradient-gold">Transformation</span>
             </h2>
 
-            <div className="line-accent w-16 mb-8" />
+            <div className="line-accent w-16 mx-auto mb-8" />
 
             <div className="space-y-6 text-muted-foreground font-sans text-base leading-relaxed">
               <p>
@@ -52,7 +52,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="mt-10 flex items-center gap-8">
+            <div className="mt-10 flex justify-center items-center gap-5 sm:gap-8">
               <div className="text-center">
                 <span className="block font-serif text-4xl text-primary">15+</span>
                 <span className="text-xs tracking-[0.2em] uppercase text-muted-foreground">Years</span>

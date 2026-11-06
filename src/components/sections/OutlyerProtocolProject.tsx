@@ -1,17 +1,17 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import outlyerBg from "@/assets/outlyer-bg.png";
+import { studioPhotos } from "@/lib/studio-photos";
 
 const OutlyerProtocolProject = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="section-padding relative overflow-hidden" ref={ref}>
+    <section className="studio-inverse section-padding relative overflow-hidden" ref={ref}>
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img src={outlyerBg} alt="" className="w-full h-full object-cover" />
+        <img src={studioPhotos[7].src} alt="" loading="lazy" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-background/80" />
       </div>
 

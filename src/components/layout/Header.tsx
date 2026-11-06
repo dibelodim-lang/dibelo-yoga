@@ -1,94 +1,33 @@
-import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, ArrowUpRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetTrigger } from "@/components/ui/sheet";
 
 const navLinks = [
-  { href: "#about", label: "About" },
   { href: "#services", label: "Classes" },
+  { href: "#about", label: "Your Teacher" },
+  { href: "#experiences", label: "Workshops & Travel" },
+  { href: "#philosophy", label: "Philosophy" },
+  { href: "#mentorship", label: "Online Coaching" },
   { href: "#contact", label: "Contact" },
 ];
-
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const [open, setOpen] = useState(false);
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setIsScrolled(window.scrollY > 30);
+    onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  return (
-    <motion.header
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-sm border-b border-border"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="container-wide">
-        <nav className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <a href="#" className="font-serif text-2xl text-foreground">
-            Dibelo<span className="text-primary">.</span>
-          </a>
-
-          {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-10">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-foreground"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </nav>
-      </div>
-
-      {/* Mobile Menu */}
-      <motion.div
-        initial={false}
-        animate={{
-          height: isMobileMenuOpen ? "auto" : 0,
-          opacity: isMobileMenuOpen ? 1 : 0,
-        }}
-        transition={{ duration: 0.3 }}
-        className="md:hidden overflow-hidden bg-background/95 backdrop-blur-sm border-b border-border"
-      >
-        <ul className="container-wide py-6 space-y-4">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block font-sans text-sm tracking-[0.15em] uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </motion.div>
-    </motion.header>
-  );
+  return <header className={`fixed top-0 inset-x-0 z-40 border-b transition-colors duration-300 ${isScrolled ? "bg-background/95 border-border backdrop-blur-md" : "studio-inverse bg-background/20 border-foreground/20"}`}>
+    <div className="container-wide flex items-center justify-between h-20 gap-5">
+      <a href="#" aria-label="Dibelo Yoga home" className="shrink-0 leading-none"><span className="font-serif text-3xl">Dibelo<span className="text-primary">.</span></span><span className="block text-[9px] uppercase mt-1">Yoga & movement</span></a>
+      <nav aria-label="Main navigation" className="hidden xl:flex gap-6 items-center">{navLinks.map(link => <a key={link.href} href={link.href} className="text-xs text-foreground/80 hover:text-primary transition-colors">{link.label}</a>)}</nav>
+      <div className="flex items-center gap-2"><Button asChild className="hidden sm:inline-flex rounded-none text-xs h-11 px-5"><a href="#contact">Book a Session<ArrowUpRight /></a></Button>
+      <Sheet open={open} onOpenChange={setOpen}><SheetTrigger asChild><Button variant="ghost" size="icon" className="xl:hidden" aria-label="Open navigation"><Menu /></Button></SheetTrigger>
+        <SheetContent className="w-[min(90vw,400px)] overflow-y-auto"><SheetHeader className="text-left mt-8"><SheetTitle className="font-serif text-4xl">Dibelo Yoga</SheetTitle><SheetDescription>Yoga & movement</SheetDescription></SheetHeader><nav aria-label="Mobile navigation" className="flex flex-col mt-10">{navLinks.map(link => <a key={link.href} href={link.href} onClick={() => setOpen(false)} className="font-serif text-2xl py-4 border-b border-border hover:text-primary">{link.label}</a>)}</nav><Button asChild className="mt-8 w-full"><a href="#contact" onClick={() => setOpen(false)}>Book a Session<ArrowUpRight /></a></Button></SheetContent>
+      </Sheet></div>
+    </div>
+  </header>;
 };
-
 export default Header;
