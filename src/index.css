@@ -173,6 +173,11 @@
   color: hsl(var(--foreground));
 }
 
+.studio-video-ending #contact,
+.studio-video-ending footer {
+  background-color: transparent;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
