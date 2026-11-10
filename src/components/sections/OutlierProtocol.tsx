@@ -52,15 +52,15 @@ const OutlierProtocol = () => {
 
           <div className="space-y-6 text-muted-foreground font-sans text-base leading-relaxed max-w-3xl mx-auto">
             <p>
-              With a global footprint spanning from the Bihar School of Yoga in India to elite environments in London, Scotland, and the USA, I have dedicated my career to mastering the mechanics of the human body and mind. As the Founder of my own <a href="https://hathastudio.gr/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline underline-offset-4 transition-colors">Hatha Yoga & Pilates studio</a>, I have spent years cultivating a space for physical transformation and structural integrity.
+              With a global footprint spanning from the Bihar School of Yoga in India to elite institutions across London, Scotland, and the United States, I have dedicated over two decades to mastering the mechanics of the human body and mind. As the Founder of <a href="https://hathastudio.gr/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline underline-offset-4 transition-colors">Hatha Yoga & Pilates studio</a>, I have cultivated a benchmark space dedicated to physical transformation, longevity, and structural integrity.
             </p>
 
             <p>
-              Today, I lead The Outlier Protocol, a bespoke wellness framework designed for high-performers, CEOs, and VIPs who operate in high-pressure environments. Beyond private residency coaching, I lead International Yoga Teacher Trainings and specialized workshops globally, mentoring the next generation of practitioners and shaping the future of wellness education.
+              Today, I lead The Outlier Protocol an elite performance and wellness framework engineered for high-performers whose environments demand uncompromising excellence. Alongside advising CEOs and industry leaders, I condition top-tier professional athletes, national team competitors, and elite sports professionals seeking to scale their biomechanical efficiency, accelerate nervous system recovery, and command maximum output under pressure. Beyond private residencies and targeted athletic architecture, I direct International Yoga Teacher Trainings and intensive workshops worldwide, mentoring the next generation of practitioners and elevating the standards of wellness education globally.
             </p>
 
             <p>
-              My methodology integrates advanced Pranayama (Nervous System Regulation), Rocket & Ashtanga Yoga, and Ayurvedic therapeutic practices to ensure peak physical state and mental clarity.
+              My methodology synthesizes advanced Pranayama (neural modulation and nervous system regulation), dynamic Ashtanga and Rocket disciplines, and targeted Ayurvedic therapeutic bodywork to engineer sustainable peak state, structural resilience, and mental clarity.
             </p>
           </div>
         </motion.div>
