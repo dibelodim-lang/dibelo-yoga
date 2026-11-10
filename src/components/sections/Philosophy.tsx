@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import costaVayaImg from "@/assets/costa-vaya-dj.jpg";
-import philosophyOrnament from "@/assets/philosophy-ornament.png";
+import philosophyOrnament from "@/assets/ascent-black-lettering.png.asset.json";
 
 
 const Philosophy = () => {
@@ -50,10 +50,10 @@ const Philosophy = () => {
             initial={{ opacity: 0, scale: 0.8, rotate: -8 }}
             animate={isInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
             transition={{ duration: 1.6, delay: 0.3, ease: "easeOut" }}
-            className="studio-inverse flex-shrink-0 w-32 md:w-44 lg:w-52 aspect-square rounded-full overflow-hidden bg-background"
+            className="flex-shrink-0 w-32 md:w-44 lg:w-52 aspect-square"
           >
             <img
-              src={philosophyOrnament}
+              src={philosophyOrnament.url}
               alt="The Ascent Experience logo"
               loading="lazy"
               className="w-full h-full object-contain scale-[1.65]"
