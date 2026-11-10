@@ -50,13 +50,13 @@ const Philosophy = () => {
             initial={{ opacity: 0, scale: 0.8, rotate: -8 }}
             animate={isInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
             transition={{ duration: 1.6, delay: 0.3, ease: "easeOut" }}
-            className="flex-shrink-0"
+            className="studio-inverse flex-shrink-0 w-32 md:w-44 lg:w-52 aspect-square rounded-full overflow-hidden bg-background"
           >
             <img
               src={philosophyOrnament}
-              alt="Dibelo Yoga emblem"
+              alt="The Ascent Experience logo"
               loading="lazy"
-              className="w-32 md:w-44 lg:w-52 h-auto opacity-90 drop-shadow-[0_0_25px_hsl(var(--gold)/0.25)]"
+              className="w-full h-full object-contain scale-[1.65]"
             />
           </motion.div>
         </motion.div>
