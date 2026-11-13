@@ -22,6 +22,11 @@ import gallery10 from "@/assets/gallery-10.jpg";
 import gallery11 from "@/assets/gallery-11.jpg";
 import gallery12 from "@/assets/gallery-12.jpg";
 import gallery13 from "@/assets/gallery-13.jpg";
+import gallery14 from "@/assets/gallery/IMG_0521.jpg.asset.json";
+import gallery15 from "@/assets/gallery/IMG_0620.jpg.asset.json";
+import gallery16 from "@/assets/gallery/IMG_0647.jpg.asset.json";
+import gallery17 from "@/assets/gallery/IMG_7709.jpg.asset.json";
+import gallery18 from "@/assets/gallery/IMG_8704.jpg.asset.json";
 
 const images = [
   ...studioPhotos,
@@ -37,6 +42,11 @@ const images = [
   { src: gallery11, alt: "Guided stretch in group session" },
   { src: gallery12, alt: "Assisted extended side angle pose" },
   { src: gallery13, alt: "Hands-on adjustment in forward fold" },
+  { src: gallery14.url, alt: "Dimitris Dibelo in a twisted downward dog variation" },
+  { src: gallery15.url, alt: "Dimitris Dibelo in a low lunge with arms overhead" },
+  { src: gallery16.url, alt: "Dimitris Dibelo in a one-legged arm balance" },
+  { src: gallery17.url, alt: "Dimitris Dibelo in a seated forward fold backlit by window light" },
+  { src: gallery18.url, alt: "Dimitris Dibelo in a bound squat pose on a city street" },
 ];
 
 const Gallery = () => {
