@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { studioPhotos } from "@/lib/studio-photos";
 import handstandPhoto from "@/assets/studio/Dibelo_Dimitris_5.webp.asset.json";
 import crossedLegsArmBalancePhoto from "@/assets/studio/Dibelo_Dimitris_10.webp.asset.json";
+import seatedForwardFoldPhoto from "@/assets/studio/Dibelo_Dimitris_1.webp.asset.json";
 import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
@@ -29,10 +30,14 @@ import gallery15 from "@/assets/gallery/IMG_0620.jpg.asset.json";
 import gallery16 from "@/assets/gallery/IMG_0647.jpg.asset.json";
 import gallery17 from "@/assets/gallery/IMG_7709.jpg.asset.json";
 import gallery18 from "@/assets/gallery/IMG_8704.jpg.asset.json";
+import gallery19 from "@/assets/gallery/IMG_8725.jpg.asset.json";
 
 const images = [
   ...studioPhotos.filter(
-    (photo) => photo.src !== handstandPhoto.url && photo.src !== crossedLegsArmBalancePhoto.url
+    (photo) =>
+      photo.src !== handstandPhoto.url &&
+      photo.src !== crossedLegsArmBalancePhoto.url &&
+      photo.src !== seatedForwardFoldPhoto.url
   ),
   { src: gallery2, alt: "Crow pose on concrete" },
   { src: gallery3, alt: "Stretching in dark studio" },
@@ -51,6 +56,7 @@ const images = [
   { src: gallery16.url, alt: "Dimitris Dibelo in a one-legged arm balance" },
   { src: gallery17.url, alt: "Dimitris Dibelo in a seated forward fold backlit by window light" },
   { src: gallery18.url, alt: "Dimitris Dibelo in a bound squat pose on a city street" },
+  { src: gallery19.url, alt: "Dimitris Dibelo in a seated forward fold on a city street" },
 ];
 
 const Gallery = () => {
