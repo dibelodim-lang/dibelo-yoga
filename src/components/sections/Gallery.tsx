@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { studioPhotos } from "@/lib/studio-photos";
 import handstandPhoto from "@/assets/studio/Dibelo_Dimitris_5.webp.asset.json";
+import bhujapidasanaPhoto from "@/assets/studio/Dibelo_Dimitris_9.webp.asset.json";
 import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
@@ -30,7 +31,9 @@ import gallery17 from "@/assets/gallery/IMG_7709.jpg.asset.json";
 import gallery18 from "@/assets/gallery/IMG_8704.jpg.asset.json";
 
 const images = [
-  ...studioPhotos.filter((photo) => photo.src !== handstandPhoto.url),
+  ...studioPhotos.filter(
+    (photo) => photo.src !== handstandPhoto.url && photo.src !== bhujapidasanaPhoto.url
+  ),
   { src: gallery2, alt: "Crow pose on concrete" },
   { src: gallery3, alt: "Stretching in dark studio" },
   { src: gallery4, alt: "Seated side stretch in warehouse" },
